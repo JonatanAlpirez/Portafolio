@@ -1,0 +1,14 @@
+.user-info__name{
+    display: block;
+    color: var(--color-principal);
+    margin-top: 2rem;
+    font-size: 4rem;
+
+}
+
+.user-info__title{
+    display: block;
+    color: var(--color-principal);
+    font-size: 2rem;
+    font-weight: bold;
+}
