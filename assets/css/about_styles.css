@@ -12,3 +12,26 @@
     font-size: 2rem;
     font-weight: bold;
 }
+/*  */
+.content__about{
+    
+    align-items:stretch; 
+    justify-content: flex-start; 
+}
+    
+/* Cuadricula de habilidades */
+.about__squares{
+    margin: auto 10%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction:row;
+    align-content: center;
+
+}
+
+.squares__option{
+    margin: 1rem;
+    font-size: 7rem;
+}
