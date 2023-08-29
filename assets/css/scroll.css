@@ -1,0 +1,84 @@
+/*Content -- Chrome */ 
+
+.content__page::-webkit-scrollbar{
+    width: 15px;
+    
+    background-color: transparent;
+}
+.content__page::-webkit-scrollbar-thumb{ /* area para manipular cursor */
+    
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 4rem;
+    border: 3px solid transparent;
+
+}
+
+.content__page:hover::-webkit-scrollbar-thumb{ /* aparece con hover */
+    
+    background-color: var(--color-text);
+    border: 3px solid var(--color-background);
+}
+
+.content__page:hover::-webkit-scrollbar-thumb:hover{ /*  */
+    
+    background-color:  var(--color-secondary);
+    border: 0px;
+}
+
+.content__page::-webkit-scrollbar-track{/*caja externa del scrollbar*/
+    background-color: transparent;
+    margin: 5rem 0; /*reduce dimensión vertical*/
+}
+
+
+/*Content -- Firefox */
+
+.content__page{
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-background) transparent;
+}
+
+
+/*Aside -- Chrome */ 
+
+.layaout__aside::-webkit-scrollbar{
+    width: 10px;
+    margin: 5rem 0;
+    
+    background-color: var(--color-secondary);
+}
+
+.layaout__aside::-webkit-scrollbar-thumb{ /* area para manipular cursor */
+    
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 4rem;
+    border: 3px solid transparent;
+
+}
+
+.layaout__aside:hover::-webkit-scrollbar-thumb{ /* aparece con hover */
+    
+    background-color: var(--color-text);
+    border: 3px solid var(--color-secondary);
+}
+
+.layaout__aside:hover::-webkit-scrollbar-thumb:hover{ /*  */
+    
+    background-color:  var(--color-text);
+    border: 0px;
+}
+
+.layaout__aside::-webkit-scrollbar-track{/*caja externa del scrollbar*/
+    background-color: transparent;
+    margin: 5rem 0; /*reduce dimensión vertical*/
+}
+
+
+/*Content -- Firefox */
+
+.layaout__aside{
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-background) transparent;
+}

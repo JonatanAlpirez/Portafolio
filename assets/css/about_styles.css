@@ -22,7 +22,83 @@
     
     padding: 3rem;
 }
-     
+
+.about__header{
+    margin-bottom: 2rem;
+    display: inline-block;
+
+}
+
+.about__title{
+    font-size: 3.2rem;
+    position: relative;
+}
+
+.about__title::after{
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 3rem;
+
+    top: 2rem;
+    right: -2rem;
+
+    background-image: -webkit-repeating-radial-gradient(center center, var(--color-text), var(--color-text) 1px, transparent 0px, transparent 100%);
+    background-size: 6px 6px;
+
+
+
+
+    
+    
+
+}
+
+.title__color{
+    color: var(--color-principal);
+}
+ 
+.about__personal-info{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.personal-info__bio{
+    margin: 3rem 0rem;
+}
+
+.personal-info__description{
+    font-size: 1.8rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.personal-info__data{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.personal-info__list{
+
+}
+
+.personal-info__option{
+    margin: 2rem 0;
+}
+
+.personal-info__title{
+    font-size: 3.5rem;
+    color: var(--color-principal);
+}
+
+.personal-info__value{
+    margin-left: 1.5rem;
+    font-size: 2rem;
+}
+
+
+
 /* Cuadricula de habilidades */
 .about__squares{
     margin: auto 10%;
