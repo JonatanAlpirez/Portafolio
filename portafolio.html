@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portafolio</title>
 
-    <link rel="stylesheet" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css"/>
-    <link rel="stylesheet" href="./assets/fonts/Quantico/Quantico.css"/>
-    <link rel="stylesheet" href="./assets/css/styles.css"/>
-    <link rel="stylesheet" href="./assets/css/about_styles.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/fonts/Quantico/Quantico.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/portafolio_styles.css" />
+    <link rel="stylesheet" href="./assets/css/scroll.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
 </head>
+
 <body>
     <!-- Layaout Principal -->
     <div class="layaout">
@@ -27,7 +31,7 @@
                 <div class="user-info__general">
 
                     <div class="user-info__container-image">
-                        <img src="/assets/img/jonatan.jpg" class= "user-info__image" alt="foto de perfil">
+                        <img src="/assets/img/jonatan.jpg" class="user-info__image" alt="foto de perfil">
                     </div>
                     <!-- Sombra -->
 
@@ -64,12 +68,12 @@
                                 <span class="menu__overlay">Portafolio</span>
                             </a>
                         </li>
-                        <li class="menu__option">
+                        <!-- <li class="menu__option">
                             <a href="blog.html" class="menu__link">
                                 <i class="menu__icon fa-solid fa-book"></i>
                                 <span class="menu__overlay">Blog</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="menu__option">
                             <a href="contacto.html" class="menu__link">
                                 <i class="menu__icon fa-solid fa-envelope"></i>
@@ -85,12 +89,12 @@
 
                     <ul class="links_social">
                         <li class="social__option">
-                            <a href="#" class="social__link">
+                            <a href="https://www.linkedin.com/in/jonatan-alpirez/" class="social__link" target="_blank">
                                 <i class="social__icon fa-brands fa-linkedin"></i>
                             </a>
                         </li>
                         <li class="social__option">
-                            <a href="#" class="social__link">
+                            <a href="https://github.com/JonatanAlpirez" class="social__link" target="_blank">
                                 <i class="social__icon fa-brands fa-github"></i>
                             </a>
                         </li>
@@ -115,13 +119,245 @@
 
         <!-- Content -->
         <main class="layaout__content">
-            <section class="content__page content__about">
+            <section class="content__page content__portafolio">
+
+                <div class="portafolio__header">
+                    <h2 class="portafolio__title">
+                        Web
+                    </h2>
+                </div>
+
+                <!-- Card R&M API-->
+                <div class="card__container">
+
+                    <div class="card__img-container">
+
+                        <img class="card__img" src="/assets/img/rickandmorty.png" alt="">
+
+                        <div class="card__links">
+                            <!-- Git -->
+                            <a class="card__link-icon"
+                                href="https://github.com/JonatanAlpirez/RickAndMortyAPIconsumer-next.js"
+                                target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <!-- Page  -->
+                            <a class="card__link-icon" href="https://rickandmortyapi-consumer-nextjs.vercel.app/"
+                                target="_blank">
+                                <i class="fa-solid fa-pager"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="card__info">
+                        <h1 class="card__title">
+                            Rick and Morty API consumer
+                        </h1>
+                        <p class="card__description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
+                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
+                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+
+                        </p>
+
+                        <div class="card__techs">
+
+                            <div class="tech__logo">
+                                <i class="devicon-nextjs-original"></i>
+                                <span class="tech__title">Next.js</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-react-original"></i>
+                                <span class="tech__title">React</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-css3-plain"></i>
+                                <span class="tech__title">CSS</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-javascript-plain"></i>
+                                <span class="tech__title">Javascript</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card YETI-->
+                <div class="card__container">
+
+                    <div class="card__img-container">
+
+                        <img class="card__img" src="/assets/img/yeti.png" alt="">
+
+                        <div class="card__links">
+                            <!-- Git -->
+                            <a class="card__link-icon" href="https://github.com/JonatanAlpirez/Yeti_Personalizado_Mx"
+                                target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <!-- Page  -->
+                            <a class="card__link-icon" href="#" target="_blank">
+                                <i class="fa-solid fa-pager"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="card__info">
+                        <h1 class="card__title">
+                            Yeti PersonalizadoMx
+                        </h1>
+                        <p class="card__description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
+                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
+                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+
+                        </p>
+
+                        <div class="card__techs">
+
+                            <div class="tech__logo">
+                                <i class="devicon-java-plain"></i>
+                                <span class="tech__title">Java</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-spring-plain"></i>
+                                <span class="tech__title">Spring Boot</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-mysql-plain"></i>
+                                <span class="tech__title">MySQL</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-css3-plain"></i>
+                                <span class="tech__title">CSS</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-html5-plain"></i>
+                                <span class="tech__title">HTML</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <i class="devicon-javascript-plain"></i>
+                                <span class="tech__title">Javascript</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="portafolio__header">
+                    <h2 class="portafolio__title">
+                        Data
+                    </h2>
+                </div>
+
+                <div class="portafolio__header">
+                    <h2 class="portafolio__title">
+                        Papers
+                    </h2>
+                </div>
+
+
+                <!-- Card Paper 1-->
+                <div class="card__container">
+
+                    <div class="card__img-container">
+
+                        <img class="card__img" src="/assets/img/paper1.png" alt="">
+
+                        <div class="card__links">
+                            <!-- paper -->
+                            <a class="card__link-icon" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9194636/"
+                                target="_blank">
+                                <i class="fa-regular fa-newspaper"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card__info">
+                        <h1 class="card__title">
+                            Neonatal Mice Spinal Cord Interneurons Send Axons through the Dorsal Roots
+                        </h1>
+                        <p class="card__description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
+                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
+                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+
+                        </p>
+
+                        <div class="card__techs">
+
+                            <div class="tech__logo">
+                                <img class="tech__logoprism" src="./assets/img/GraphpadPrism.png" alt="">
+                            </div>
 
 
 
-                
+                        </div>
 
-                
+                    </div>
+                </div>
+
+                <!-- Card Paper 2-->
+                <div class="card__container">
+
+                    <div class="card__img-container">
+
+                        <img class="card__img" src="/assets/img/paper2.png" alt="">
+
+                        <div class="card__links">
+
+                            <a class="card__link-icon" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10046174/"
+                                target="_blank">
+                                <i class="fa-regular fa-newspaper"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card__info">
+                        <h1 class="card__title">
+                            Locomotion Outcome Improvement in Mice with Glioblastoma Multiforme after Treatment with
+                            Anastrozole
+                        </h1>
+                        <p class="card__description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
+                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
+                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+
+                        </p>
+
+                        <div class="card__techs">
+
+                            <div class="tech__logo">
+                                <i class="devicon-matlab-plain"></i>
+                                <span class="tech__title">Matlab</span>
+                            </div>
+
+                            <div class="tech__logo">
+                                <img class="tech__logoprism" src="./assets/img/GraphpadPrism.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
 
             </section>
         </main>
@@ -129,4 +365,5 @@
     </div>
 
 </body>
+
 </html>

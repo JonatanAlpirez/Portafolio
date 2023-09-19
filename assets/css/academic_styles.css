@@ -1,0 +1,52 @@
+.user-info__name {
+  display: block;
+  color: var(--color-principal);
+  margin-top: 2rem;
+  font-size: 4rem;
+}
+
+.user-info__title {
+  display: block;
+  color: var(--color-principal);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* About */
+.content__academic {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  height: 100%;
+  overflow: auto;
+}
+
+.academic__step-card {
+  position: relative;
+  width: 80%;
+  height: auto;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  border-left: 0.5rem solid var(--color-secondary);
+}
+
+.academic__title::before {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  top: 3rem;
+  left: -1.5rem;
+
+  border: 1px solid var(--color-principal);
+
+  background-color: var(--color-icon);
+}

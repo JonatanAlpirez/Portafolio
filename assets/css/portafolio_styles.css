@@ -1,0 +1,135 @@
+.user-info__name {
+  display: block;
+  color: var(--color-principal);
+  margin-top: 2rem;
+  font-size: 4rem;
+}
+
+.user-info__title {
+  display: block;
+  color: var(--color-principal);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Portafolio */
+.content__portafolio {
+  height: 90%;
+
+  display: block;
+  padding: 3rem;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.portafolio__header {
+  display: inline-block;
+}
+
+.portafolio__title {
+  margin: 1rem 0;
+  font-size: 3.2rem;
+  position: relative;
+}
+
+/* sombra titulo */
+.portafolio__title::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3.5rem;
+
+  top: 0.5rem;
+  right: -1.5rem;
+
+  background-image: -webkit-repeating-radial-gradient(
+    center center,
+    var(--color-text),
+    var(--color-text) 0.8px,
+    transparent 0px,
+    transparent 100%
+  );
+  background-size: 5.7px 6px;
+}
+
+.card__container {
+  margin: 2rem 3rem;
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 20px;
+  border: 2px solid var(--color-secondary);
+  overflow: hidden;
+}
+
+.card__img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--color-secondary);
+}
+
+.card__img {
+  width: 90rem;
+}
+
+.card__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card__link-icon {
+  width: auto;
+  margin: 0.1rem 0.5rem;
+  padding: 0.1rem 2rem;
+
+  border-radius: 10px;
+  font-size: 3rem;
+}
+.card__link-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card__info {
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-size: 2rem;
+}
+
+.card__description {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+.card__techs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech__logo {
+  margin: 0 1rem;
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.tech__title {
+  display: block;
+  font-size: 1rem;
+}
+
+.tech__logoprism {
+  padding-bottom: 0.5rem;
+  width: 5rem;
+  filter: brightness(15%);
+}
