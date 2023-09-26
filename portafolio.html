@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>Portafolio</title>
+    <title>Jonatan Alpirez - Portafolio</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/portafolio_styles.css" />
     <link rel="stylesheet" href="./assets/css/scroll.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
@@ -117,6 +118,12 @@
 
         </aside>
 
+        <!-- Barra responsive -->
+        <div class="layaout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
         <!-- Content -->
         <main class="layaout__content">
             <section class="content__page content__portafolio">
@@ -155,9 +162,9 @@
                             Rick and Morty API consumer
                         </h1>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
-                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
-                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+                            Una pagina interactiva que despliega la información obtenida del consumo de la API REST
+                            publica: <br />
+                            https://rickandmortyapi.com/
 
                         </p>
 
@@ -214,9 +221,9 @@
                             Yeti PersonalizadoMx
                         </h1>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
-                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
-                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+                            Una aplicación web del e-commerce con autentificación y registro de usuarios, gestión de
+                            productos (consulta, registro, borrado y actualización), base de datos (MySQL). Front-End
+                            desplegado.
 
                         </p>
 
@@ -257,61 +264,18 @@
                     </div>
                 </div>
 
-                <div class="portafolio__header">
+                <!-- <div class="portafolio__header">
                     <h2 class="portafolio__title">
                         Data
                     </h2>
-                </div>
+                </div> -->
 
                 <div class="portafolio__header">
                     <h2 class="portafolio__title">
                         Papers
                     </h2>
                 </div>
-
-
-                <!-- Card Paper 1-->
-                <div class="card__container">
-
-                    <div class="card__img-container">
-
-                        <img class="card__img" src="/assets/img/paper1.png" alt="">
-
-                        <div class="card__links">
-                            <!-- paper -->
-                            <a class="card__link-icon" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9194636/"
-                                target="_blank">
-                                <i class="fa-regular fa-newspaper"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="card__info">
-                        <h1 class="card__title">
-                            Neonatal Mice Spinal Cord Interneurons Send Axons through the Dorsal Roots
-                        </h1>
-                        <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
-                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
-                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
-
-                        </p>
-
-                        <div class="card__techs">
-
-                            <div class="tech__logo">
-                                <img class="tech__logoprism" src="./assets/img/GraphpadPrism.png" alt="">
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-
+                <!-- Orden Des -->
                 <!-- Card Paper 2-->
                 <div class="card__container">
 
@@ -336,9 +300,8 @@
                             Anastrozole
                         </h1>
                         <p class="card__description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas odio facilis velit
-                            voluptatibus corporis maxime aspernatur expedita, accusantium sint maiores magni
-                            similique id excepturi voluptate corrupti beatae a laboriosam delectus.
+                            Artículo científico publicado en marzo del 2023 en la revista internacional "Brain
+                            sciences". Donde realice el análisis estadístico de los datos cinemáticos.
 
                         </p>
 
@@ -357,6 +320,49 @@
 
                     </div>
                 </div>
+
+                <!-- Card Paper 1-->
+                <div class="card__container">
+
+                    <div class="card__img-container">
+
+                        <img class="card__img" src="/assets/img/paper1.png" alt="">
+
+                        <div class="card__links">
+                            <!-- paper -->
+                            <a class="card__link-icon" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9194636/"
+                                target="_blank">
+                                <i class="fa-regular fa-newspaper"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card__info">
+                        <h1 class="card__title">
+                            Neonatal Mice Spinal Cord Interneurons Send Axons through the Dorsal Roots
+                        </h1>
+                        <p class="card__description">
+                            Artículo científico publicado en abril del 2022 en la revista internacional "Experimental
+                            Neurobiology". Donde realice el análisis estadístico de los datos.
+
+                        </p>
+
+                        <div class="card__techs">
+
+                            <div class="tech__logo">
+                                <img class="tech__logoprism" src="./assets/img/GraphpadPrism.png" alt="">
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
 
 
             </section>

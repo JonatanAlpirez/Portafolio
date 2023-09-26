@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>Acerca de mi</title>
+    <title>Jonatan Alpirez - Acerca de</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/about_styles.css" />
     <link rel="stylesheet" href="./assets/css/scroll.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <script src="./assets/js/menu.js" defer></script>
 
 
 
@@ -119,6 +122,12 @@
 
         </aside>
 
+        <!-- Barra responsive -->
+        <div class="layaout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
         <!-- Content -->
         <main class="layaout__content">
             <section class="content__page content__about">
@@ -135,10 +144,14 @@
                         <p class="personal-info__description">
                             ¡Hola!
                             Soy Jonatan Alpirez, un desarrollador de aplicaciones web y entusiasta por la ciencia de
-                            datos, con un firme compromiso de crear soluciones. A través de mi viaje en el desarrollo,
+                            datos, con un firme compromiso de crear soluciones.
+                            <br />
+                            <br />
+                            A través de mi viaje en el desarrollo,
                             he combinado mis habilidades técnicas con mi pasión por los datos para crear experiencias en
                             línea excepcionales y analizar información valiosa.
-
+                            <br />
+                            <br />
                             He desarrollado sitios web interactivos y dinámicos que brindan una experiencia de usuario
                             fluida. Mi enfoque en la usabilidad, el diseño intuitivo y el rendimiento sólido se refleja
                             en cada proyecto. He participado en proyectos que me han permitido explorar conjuntos de
@@ -179,8 +192,8 @@
                 </section>
 
                 <section class="about__skills">
-                    <header class="skills__title">
-                        <h2>Habilid<span class="title__color">ades</span>
+                    <header class="about__header">
+                        <h2 class="about__title">Habilid<span class="title__color">ades</span>
                         </h2>
                     </header>
 
@@ -198,11 +211,32 @@
 
                         <div class="squares__option">
                             <div class="squares__logo">
+                                <i class="devicon-nextjs-original"></i>
+                            </div>
+                            <br />
+                            <div class="squares__title">
+                                Next.js
+                            </div>
+
+                        </div>
+
+                        <div class="squares__option">
+                            <div class="squares__logo">
                                 <i class="devicon-c-plain"></i>
                             </div>
                             <br />
                             <div class="squares__title">
                                 C
+                            </div>
+                        </div>
+
+                        <div class="squares__option">
+                            <div class="squares__logo">
+                                <i class="devicon-react-original"></i>
+                            </div>
+                            <br />
+                            <div class="squares__title">
+                                React
                             </div>
                         </div>
 
@@ -218,11 +252,31 @@
 
                         <div class="squares__option">
                             <div class="squares__logo">
+                                <i class="devicon-git-plain"></i>
+                            </div>
+                            <br />
+                            <div class="squares__title">
+                                Git
+                            </div>
+                        </div>
+
+                        <div class="squares__option">
+                            <div class="squares__logo">
                                 <i class="fa-brands fa-java"></i>
                             </div>
                             <br />
                             <div class="squares__title">
                                 Java
+                            </div>
+                        </div>
+
+                        <div class="squares__option">
+                            <div class="squares__logo">
+                                <i class="devicon-matlab-plain"></i>
+                            </div>
+                            <br />
+                            <div class="squares__title">
+                                Matlab
                             </div>
                         </div>
 

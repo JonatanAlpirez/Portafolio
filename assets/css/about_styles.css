@@ -80,6 +80,7 @@
 }
 
 .personal-info__list {
+  margin-left: 2rem;
 }
 
 .personal-info__option {
@@ -109,9 +110,9 @@
 }
 
 .squares__option {
-  width: 20%;
   text-align: center;
-  margin: 1rem;
+  margin: 0 1rem;
+  padding: 0 1rem;
 
   border-radius: 10%;
   transition: all 300ms linear;

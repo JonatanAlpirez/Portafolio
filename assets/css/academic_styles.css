@@ -50,3 +50,7 @@
 
   background-color: var(--color-icon);
 }
+
+.academic__description {
+  text-align: justify;
+}
