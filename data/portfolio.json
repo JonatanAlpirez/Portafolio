@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "Jonatan Alpirez | Desarrollador Full Stack & Investigador (PhD)",
+    "description": "Portafolio profesional de Jonatan Alpirez. Desarrollador Web Full Stack (Java, Spring Boot, React, Next.js, Python) y Doctor en Ciencias Biomédicas.",
+    "keywords": "Jonatan Alpirez, Desarrollador Full Stack, Java, Spring Boot, React, Next.js, Python, Data Science, Neurociencias, Portafolio",
+    "author": "Jonatan Alpirez"
+  },
+  "brand": {
+    "firstName": "Jonatan",
+    "lastName": "Alpirez",
+    "ctaLabel": "Hablemos",
+    "ctaHref": "#contacto"
+  },
+  "navigation": [
+    {
+      "label": "Sobre Mí",
+      "mobileLabel": "Sobre Mí",
+      "href": "#sobre-mi"
+    },
+    {
+      "label": "Habilidades",
+      "mobileLabel": "Habilidades",
+      "href": "#habilidades"
+    },
+    {
+      "label": "Proyectos",
+      "mobileLabel": "Proyectos & Publicaciones",
+      "href": "#proyectos"
+    },
+    {
+      "label": "Formación",
+      "mobileLabel": "Formación & Trayectoria",
+      "href": "#formacion"
+    },
+    {
+      "label": "Contacto",
+      "mobileLabel": "Contacto",
+      "href": "#contacto"
+    }
+  ],
+  "profile": {
+    "email": "jonatan.alpirez@gmail.com",
+    "whatsappUrl": "https://wa.me/523317034178",
+    "githubUrl": "https://github.com/JonatanAlpirez",
+    "linkedinUrl": "https://www.linkedin.com/in/jonatan-alpirez/"
+  },
+  "hero": {
+    "status": "Disponible para nuevos proyectos & retos",
+    "greeting": "Hola, soy",
+    "name": "Jonatan Alpirez",
+    "subtitle": "Desarrollador Full Stack & Investigador (PhD)",
+    "subtitleIcon": "fa-solid fa-code",
+    "description": "Combino el desarrollo de software web moderno con el rigor metodológico de la ciencia de datos y la investigación. Construyo aplicaciones web interactivas, arquitecturas robustas en Java Spring Boot y React, y análisis cuantitativo de alto nivel.",
+    "primaryButton": {
+      "label": "Ver Proyectos",
+      "href": "#proyectos",
+      "icon": "fa-solid fa-rocket"
+    },
+    "secondaryButton": {
+      "label": "Contáctame",
+      "href": "#contacto",
+      "icon": "fa-regular fa-envelope"
+    },
+    "copyEmailLabel": "Copiar Correo",
+    "socialsLabel": "Conéctate:",
+    "socials": [
+      {
+        "title": "GitHub",
+        "href": "https://github.com/JonatanAlpirez",
+        "icon": "fa-brands fa-github",
+        "external": true
+      },
+      {
+        "title": "LinkedIn",
+        "href": "https://www.linkedin.com/in/jonatan-alpirez/",
+        "icon": "fa-brands fa-linkedin",
+        "external": true
+      },
+      {
+        "title": "Correo",
+        "href": "mailto:jonatan.alpirez@gmail.com",
+        "icon": "fa-regular fa-envelope",
+        "external": false
+      },
+      {
+        "title": "WhatsApp",
+        "href": "https://wa.me/523317034178",
+        "icon": "fa-brands fa-whatsapp",
+        "external": true
+      }
+    ],
+    "avatar": {
+      "src": "./assets/img/jonatan.jpg",
+      "alt": "Foto de perfil de Jonatan Alpirez"
+    },
+    "floatingBadges": [
+      {
+        "label": "React & Next.js",
+        "icon": "devicon-react-original",
+        "color": "#61DAFB"
+      },
+      {
+        "label": "Java & Spring Boot",
+        "icon": "devicon-spring-plain",
+        "color": "#6DB33F"
+      },
+      {
+        "label": "Python & Data Science",
+        "icon": "devicon-python-plain",
+        "color": "#FFD43B"
+      }
+    ],
+    "stats": [
+      {
+        "number": "+5",
+        "label": "Años de experiencia técnica & analítica"
+      },
+      {
+        "number": "Full Stack",
+        "label": "Java, Spring Boot, React, Next.js, MySQL"
+      },
+      {
+        "number": "PhD",
+        "label": "Doctor en Neurociencias Biomédicas"
+      },
+      {
+        "number": "2 Papers",
+        "label": "Publicaciones científicas indexadas"
+      }
+    ]
+  },
+  "about": {
+    "tag": "// 01. INTRODUCCIÓN",
+    "titlePrefix": "Sobre",
+    "titleHighlight": "Mí",
+    "subtitle": "Una trayectoria singular donde convergen la ingeniería de software, el análisis cuantitativo de datos y el método científico.",
+    "paragraphs": [
+      "¡Hola! Soy **Jonatan Alpirez**, desarrollador de software Full Stack y Doctor en Ciencias Biomédicas (Neurociencias) radicado en Guadalajara, México.",
+      "A lo largo de mi carrera he integrado dos mundos complementarios: la agilidad y creatividad del **desarrollo web contemporáneo** con la disciplina, precisión y pensamiento crítico forjados en la **investigación científica**.",
+      "He diseñado y construido plataformas web completas (e-commerce y aplicaciones basadas en APIs REST) con arquitecturas modulares, autenticación y bases de datos relacionales. Al mismo tiempo, he liderado análisis cinemáticos y estadísticos de conjuntos de datos complejos que derivaron en dos artículos científicos publicados en prestigiosas revistas internacionales."
+    ],
+    "metaItems": [
+      {
+        "icon": "fa-solid fa-location-dot",
+        "title": "Ubicación",
+        "value": "Guadalajara, Jal. México"
+      },
+      {
+        "icon": "fa-solid fa-graduation-cap",
+        "title": "Grado Máximo",
+        "value": "Doctorado en Ciencias"
+      },
+      {
+        "icon": "fa-solid fa-envelope",
+        "title": "Correo",
+        "value": "jonatan.alpirez@gmail.com"
+      },
+      {
+        "icon": "fa-solid fa-phone",
+        "title": "Teléfono / WhatsApp",
+        "value": "+52 33 1703 4178"
+      }
+    ],
+    "pillars": [
+      {
+        "icon": "fa-solid fa-layer-group",
+        "title": "Desarrollo Web Full Stack",
+        "description": "Construcción de aplicaciones de extremo a extremo: desde interfaces de usuario reactivas e intuitivas hasta servicios backend robustos, APIs RESTful y modelos de bases de datos relacionales."
+      },
+      {
+        "icon": "fa-solid fa-chart-line",
+        "title": "Ciencia de Datos & Análisis",
+        "description": "Extracción de patrones y conocimiento a partir de datos complejos. Dominio de Python, Matlab y bioestadística para modelado predictivo y visualización clara."
+      },
+      {
+        "icon": "fa-solid fa-brain",
+        "title": "Rigor & Solución de Problemas",
+        "description": "Capacidad probada para descomponer problemas no triviales, validar hipótesis y documentar arquitecturas con mentalidad analítica y altos estándares de calidad."
+      }
+    ]
+  },
+  "skills": {
+    "tag": "// 02. COMPETENCIAS",
+    "titlePrefix": "Stack &",
+    "titleHighlight": "Habilidades",
+    "subtitle": "Tecnologías y herramientas que domino para resolver problemas y llevar proyectos a producción.",
+    "categories": [
+      {
+        "title": "Frontend",
+        "icon": "fa-solid fa-desktop",
+        "items": [
+          {
+            "name": "React",
+            "icon": "devicon-react-original",
+            "color": "#61DAFB",
+            "badge": "SPA / Hooks"
+          },
+          {
+            "name": "Next.js",
+            "icon": "devicon-nextjs-original",
+            "color": "#ffffff",
+            "badge": "SSR / Routing"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "fa-brands fa-square-js",
+            "color": "#F7DF1E",
+            "badge": "ES6+ / Async"
+          },
+          {
+            "name": "HTML5 Semántico",
+            "icon": "fa-brands fa-html5",
+            "color": "#E34F26",
+            "badge": "Accesibilidad"
+          },
+          {
+            "name": "CSS3 Moderno",
+            "icon": "fa-brands fa-css3-alt",
+            "color": "#1572B6",
+            "badge": "Grid / Flexbox"
+          }
+        ]
+      },
+      {
+        "title": "Backend & Bases",
+        "icon": "fa-solid fa-server",
+        "items": [
+          {
+            "name": "Java",
+            "icon": "fa-brands fa-java",
+            "color": "#ED8B00",
+            "badge": "POO / Core"
+          },
+          {
+            "name": "Spring Boot",
+            "icon": "devicon-spring-plain",
+            "color": "#6DB33F",
+            "badge": "REST API / JPA"
+          },
+          {
+            "name": "Python",
+            "icon": "devicon-python-plain",
+            "color": "#3776AB",
+            "badge": "Backend / Scripts"
+          },
+          {
+            "name": "MySQL / SQL",
+            "icon": "devicon-mysql-plain",
+            "color": "#00758F",
+            "badge": "Relacional / CRUD"
+          },
+          {
+            "name": "RESTful APIs",
+            "icon": "fa-solid fa-network-wired",
+            "color": "#06B6D4",
+            "badge": "Integraciones"
+          }
+        ]
+      },
+      {
+        "title": "Datos & Ciencia",
+        "icon": "fa-solid fa-microscope",
+        "items": [
+          {
+            "name": "Python Data",
+            "icon": "devicon-python-plain",
+            "color": "#FFD43B",
+            "badge": "NumPy / Pandas"
+          },
+          {
+            "name": "Matlab",
+            "icon": "devicon-matlab-plain",
+            "color": "#E16737",
+            "badge": "Cinemática"
+          },
+          {
+            "name": "GraphPad Prism",
+            "icon": "fa-solid fa-chart-pie",
+            "color": "#10B981",
+            "badge": "Bioestadística"
+          },
+          {
+            "name": "Estadística",
+            "icon": "fa-solid fa-calculator",
+            "color": "#8B5CF6",
+            "badge": "Modelado"
+          },
+          {
+            "name": "Investigación",
+            "icon": "fa-solid fa-book-open",
+            "color": "#06B6D4",
+            "badge": "Peer Review"
+          }
+        ]
+      },
+      {
+        "title": "Herramientas",
+        "icon": "fa-solid fa-toolbox",
+        "items": [
+          {
+            "name": "Git & GitHub",
+            "icon": "devicon-git-plain",
+            "color": "#F05032",
+            "badge": "Control Versiones"
+          },
+          {
+            "name": "Lenguaje C / C++",
+            "icon": "devicon-c-plain",
+            "color": "#A8B9CC",
+            "badge": "Sistemas"
+          },
+          {
+            "name": "Linux / Terminal",
+            "icon": "fa-brands fa-linux",
+            "color": "#FCC624",
+            "badge": "CLI / Scripts"
+          },
+          {
+            "name": "Netlify / Vercel",
+            "icon": "fa-solid fa-cloud-arrow-up",
+            "color": "#38BDF8",
+            "badge": "CI / Deploy"
+          },
+          {
+            "name": "SCRUM / Ágil",
+            "icon": "fa-solid fa-people-group",
+            "color": "#A855F7",
+            "badge": "Metodología"
+          }
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "tag": "// 03. TRABAJOS DESTACADOS",
+    "titlePrefix": "Portafolio de",
+    "titleHighlight": "Proyectos",
+    "subtitle": "Selección de desarrollos web en producción y publicaciones científicas internacionales indexadas.",
+    "filters": [
+      {
+        "key": "all",
+        "label": "Todos"
+      },
+      {
+        "key": "web",
+        "label": "Desarrollo Web"
+      },
+      {
+        "key": "research",
+        "label": "Investigación Científica"
+      }
+    ],
+    "items": [
+      {
+        "category": "web",
+        "badgeLabel": "Web App",
+        "badgeIcon": "fa-solid fa-laptop-code",
+        "image": "./assets/img/rickandmorty.png",
+        "imageAlt": "Captura de pantalla Rick and Morty API consumer",
+        "title": "Rick and Morty API Consumer",
+        "description": "Aplicación web interactiva y responsiva desarrollada con **Next.js** y **React** que consume la API REST pública de Rick and Morty. Ofrece renderizado rápido de personajes, información detallada, diseño optimizado y despliegue en Vercel.",
+        "tags": ["Next.js", "React", "REST API", "CSS3", "Vercel"],
+        "links": [
+          {
+            "label": "Ver Demo",
+            "href": "https://rickandmortyapi-consumer-nextjs.vercel.app/",
+            "icon": "fa-solid fa-arrow-up-right-from-square",
+            "variant": "primary"
+          },
+          {
+            "label": "Código",
+            "href": "https://github.com/JonatanAlpirez/RickAndMortyAPIconsumer-next.js",
+            "icon": "fa-brands fa-github",
+            "variant": "outline"
+          }
+        ]
+      },
+      {
+        "category": "web",
+        "badgeLabel": "Full Stack E-Commerce",
+        "badgeIcon": "fa-solid fa-bag-shopping",
+        "image": "./assets/img/yeti.png",
+        "imageAlt": "Captura de pantalla Yeti PersonalizadoMx",
+        "title": "Yeti PersonalizadoMx",
+        "description": "Plataforma web de comercio electrónico integral desarrollada con backend en **Java Spring Boot** y base de datos relacional **MySQL**. Implementa autenticación y registro de usuarios, catálogo dinámico, control de inventario y operaciones CRUD completas.",
+        "tags": ["Java", "Spring Boot", "MySQL", "JavaScript", "Bootstrap / CSS"],
+        "links": [
+          {
+            "label": "Repositorio GitHub",
+            "href": "https://github.com/JonatanAlpirez/Yeti_Personalizado_Mx",
+            "icon": "fa-brands fa-github",
+            "variant": "outline"
+          }
+        ]
+      },
+      {
+        "category": "research",
+        "badgeLabel": "Paper • Brain Sciences",
+        "badgeIcon": "fa-solid fa-newspaper",
+        "image": "./assets/img/paper2.png",
+        "imageAlt": "Captura del artículo en Brain Sciences",
+        "title": "Locomotion Outcome in Mice with Glioblastoma Multiforme",
+        "description": "Artículo de investigación biomédica publicado en la revista indexada *Brain Sciences* (Marzo 2023). Responsable del diseño metodológico y ejecución del análisis estadístico y modelado cinemático de patrones locomotores tras tratamiento con anastrozol.",
+        "tags": ["Matlab", "GraphPad Prism", "Bioestadística", "NCBI / PMC"],
+        "links": [
+          {
+            "label": "Leer en NCBI / PubMed",
+            "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10046174/",
+            "icon": "fa-solid fa-book-medical",
+            "variant": "accent"
+          }
+        ]
+      },
+      {
+        "category": "research",
+        "badgeLabel": "Paper • Exp. Neurobiology",
+        "badgeIcon": "fa-solid fa-newspaper",
+        "image": "./assets/img/paper1.png",
+        "imageAlt": "Captura del artículo en Experimental Neurobiology",
+        "title": "Neonatal Spinal Cord Interneurons & Dorsal Roots",
+        "description": "Artículo científico publicado en la revista internacional *Experimental Neurobiology* (Abril 2022). Ejecuté el análisis estadístico cuantitativo y validación de datos neuroanatómicos sobre la proyección axonal de interneuronas medulares.",
+        "tags": ["Python", "GraphPad Prism", "Neuroanatomía", "NCBI / PMC"],
+        "links": [
+          {
+            "label": "Leer en NCBI / PubMed",
+            "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9194636/",
+            "icon": "fa-solid fa-book-medical",
+            "variant": "accent"
+          }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "tag": "// 04. TRAYECTORIA",
+    "titlePrefix": "Educación &",
+    "titleHighlight": "Formación",
+    "subtitle": "Bases formales en computación, ingeniería, ciencias biomédicas y especialización intensiva en desarrollo full stack.",
+    "items": [
+      {
+        "role": "Bootcamp Desarrollador Java Full Stack",
+        "institution": "Generation México",
+        "period": "2023",
+        "description": "Especialización intensiva en desarrollo web empresarial basada en Java, Spring Boot, arquitectura MVC, bases de datos relacionales SQL (MySQL), JavaScript frontend, control de versiones y metodologías ágiles de trabajo en equipo."
+      },
+      {
+        "role": "Doctorado en Ciencias Biomédicas (Neurociencias)",
+        "institution": "Universidad de Guadalajara",
+        "period": "2019 - 2022",
+        "description": "Investigación doctoral focalizada en el análisis de patrones cinemáticos del movimiento ante modelos de daño neurológico y traumatismo cerebral. Coautor de 2 publicaciones científicas internacionales de alto impacto, desempeñando el modelado de datos en Python, Matlab y bioestadística."
+      },
+      {
+        "role": "Licenciatura en Ingeniería Biomédica",
+        "institution": "Universidad de Guadalajara",
+        "period": "2012 - 2016",
+        "description": "Formación universitaria en intersección con tecnología, procesamiento digital de señales, instrumentación electrónica, sistemas computacionales y fundamentos biológicos y médicos."
+      },
+      {
+        "role": "Tecnólogo en Informática y Computación",
+        "institution": "Centro de Enseñanza Técnica Industrial (CETI)",
+        "period": "2007 - 2011",
+        "description": "Formación técnica fundamental en programación estructurada y orientada a objetos, bases de datos, lógica algorítmica y desarrollo de software y aplicaciones interactivas."
+      }
+    ]
+  },
+  "contact": {
+    "tag": "// 05. COMUNICACIÓN",
+    "titlePrefix": "Iniciemos una",
+    "titleHighlight": "Conversación",
+    "subtitle": "¿Tienes un proyecto en mente, una vacante laboral o te interesa colaborar en una propuesta técnica?",
+    "cardTitle": "Canales de contacto directo",
+    "cardDescription": "Estoy siempre disponible para discutir oportunidades como desarrollador web, análisis de datos o proyectos de innovación tecnológica. Escríbeme y te responderé a la brevedad.",
+    "methods": [
+      {
+        "icon": "fa-regular fa-envelope",
+        "label": "Correo Electrónico",
+        "value": "jonatan.alpirez@gmail.com",
+        "href": "mailto:jonatan.alpirez@gmail.com",
+        "external": false
+      },
+      {
+        "icon": "fa-brands fa-whatsapp",
+        "label": "Teléfono / WhatsApp",
+        "value": "+52 33 1703 4178",
+        "href": "https://wa.me/523317034178",
+        "external": true
+      },
+      {
+        "icon": "fa-solid fa-location-dot",
+        "label": "Ubicación",
+        "value": "Guadalajara, Jalisco, México",
+        "href": null,
+        "external": false
+      },
+      {
+        "icon": "fa-brands fa-linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/jonatan-alpirez",
+        "href": "https://www.linkedin.com/in/jonatan-alpirez/",
+        "external": true
+      },
+      {
+        "icon": "fa-brands fa-github",
+        "label": "GitHub",
+        "value": "github.com/JonatanAlpirez",
+        "href": "https://github.com/JonatanAlpirez",
+        "external": true
+      }
+    ],
+    "copyButtonLabel": "Copiar mi correo al portapapeles",
+    "form": {
+      "nameLabel": "Nombre completo *",
+      "namePlaceholder": "Ej. Ana García",
+      "emailLabel": "Correo electrónico *",
+      "emailPlaceholder": "nombre@correo.com",
+      "subjectLabel": "Asunto",
+      "subjectPlaceholder": "Ej. Propuesta de proyecto / Oportunidad laboral",
+      "defaultSubject": "Contacto desde Portafolio Web",
+      "messageLabel": "Mensaje *",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto o consulta...",
+      "submitLabel": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "description": "Desarrollador Web Full Stack & Doctor en Ciencias Biomédicas. Creando soluciones digitales con arquitectura limpia, rigor analítico y tecnología moderna.",
+    "copyright": "© 2026 Jonatan Alpirez. Todos los derechos reservados.",
+    "note": "Diseñado con código limpio, semántico y responsive."
+  }
+}

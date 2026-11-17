@@ -1,6 +1,6 @@
-# Portafolio
-
-Sitio web estático del portafolio personal de Jonatan Alpirez — Desarrollador Web.
+# Portafolio Profesional
+ 
+Sitio web personal y profesional de **Jonatan Alpirez** — Desarrollador Full Stack & Investigador en Ciencias Biomédicas (PhD).
 
 - **Producción:** https://jonatan.netlify.app/
 - **Repositorio:** https://github.com/JonatanAlpirez/Portafolio
@@ -8,15 +8,14 @@ Sitio web estático del portafolio personal de Jonatan Alpirez — Desarrollador
 
 ---
 
-## Stack
+## Stack & Diseño
 
-Sitio estático HTML/CSS puro. **Sin build step** — los archivos se sirven tal cual.
+Sitio web estático moderno de alto rendimiento. **Sin dependencias pesadas ni build step** — servido directamente en producción con máxima velocidad de carga.
 
-- HTML5 semántico
-- CSS3 (custom properties, flexbox, grid, responsive)
-- Assets estáticos (imágenes, fuentes) en `assets/`
-
-No usa frameworks JS ni bundlers. Netlify lee los archivos directo desde `main`.
+- **HTML5 Semántico**: Estructura accesible (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- **CSS3 Vanilla Avanzado**: Diseño personalizado en modo oscuro tecnológico (*Dark Tech Slate*), glassmorphism, gradientes sutiles, micro-animaciones fluidas y diseño 100% responsivo (desktop, tablet, mobile).
+- **JavaScript Vanilla**: Scroll spy automático, navbar dinámico, menú móvil interactivo, filtrado de proyectos en vivo, toasts y copia de email al portapapeles.
+- **Tipografía**: Google Fonts (*Plus Jakarta Sans* y *JetBrains Mono*) + Devicons y Font Awesome.
 
 ---
 
@@ -24,24 +23,37 @@ No usa frameworks JS ni bundlers. Netlify lee los archivos directo desde `main`.
 
 ```
 Portafolio/
-├── 📄 index.html           ← landing page
-├── 📄 about.html           ← sobre mí
-├── 📄 academic.html        ← formación académica
-├── 📄 portafolio.html      ← proyectos / trabajos
-├── 📄 blog.html            ← entradas
-├── 📄 contacto.html        ← formulario de contacto
-├── 📁 assets/              ← CSS, imágenes, fuentes
-├── 📁 05-diseno-web1/      ← material del curso (ignorado por git)
-├── 📄 package.json         ← dev server config (no afecta producción)
-├── 📄 .gitignore
+├── 📄 index.html           ← Shell semántico Single-Page
+├── 📁 data/
+│   └── 📄 portfolio.json   ← Contenido editable (textos, skills, proyectos, formación, contacto)
+├── 📄 about.html           ← Redirección automática a #sobre-mi
+├── 📄 academic.html        ← Redirección automática a #formacion
+├── 📄 portafolio.html      ← Redirección automática a #proyectos
+├── 📄 contacto.html        ← Redirección automática a #contacto
+├── 📁 assets/
+│   ├── 📁 css/             ← styles.css (design system)
+│   ├── 📁 js/              ← main.js (carga portfolio.json e interactividad)
+│   ├── 📁 img/             ← fotografías, capturas y assets
+│   └── 📁 fonts/           ← iconos fontawesome
+├── 📄 package.json         ← dev server config (live-server)
 └── 📄 README.md
 ```
 
 ---
 
+## Editar contenido
+
+Toda la información visible del portafolio (Hero, Sobre Mí, Habilidades, Proyectos/Papers, Formación, Contacto y Footer) vive en [`data/portfolio.json`](data/portfolio.json).
+
+- Edita el texto directamente en `data/portfolio.json` y recarga el navegador para ver los cambios.
+- En párrafos (`about.paragraphs`) y descripciones de proyectos (`projects.items[].description`) puedes usar `**negritas**` y `*cursivas*`.
+- Los contadores de los filtros en **Proyectos** se calculan automáticamente según los elementos en `projects.items`.
+
+---
+
 ## Desarrollo local
 
-> El sitio es HTML estático: podés abrir `index.html` directamente en el browser. Pero un dev server local evita problemas con paths relativos y suma **live-reload** para iterar diseño más rápido.
+> Como el sitio carga [`data/portfolio.json`](data/portfolio.json) mediante `fetch()`, es necesario abrirlo a través de un servidor HTTP local (`npm run dev`), no directamente como `file://`.
 
 ### Setup inicial
 
