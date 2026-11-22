@@ -1,139 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de Jonatan Alpirez. Desarrollador Web Full Stack (Java, Spring Boot, React, Next.js, Python) y Doctor en Ciencias Biomédicas.">
+  <meta name="keywords" content="Jonatan Alpirez, Desarrollador Full Stack, Java, Spring Boot, React, Next.js, Python, Data Science, Neurociencias, Portafolio">
+  <meta name="author" content="Jonatan Alpirez">
 
-    <title>Jonatan Alpirez</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jonatan Alpirez | Ingeniero de Software">
+  <meta property="og:description" content="Portafolio profesional de Jonatan Alpirez: proyectos de desarrollo web Full Stack, trayectoria académica y publicaciones en ciencias biomédicas.">
+  <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/fonts/Quantico/Quantico.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  <title>Jonatan Alpirez | Ingeniero de Software</title>
 
-    <script src="./assets/js/menu.js" defer></script>
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome Local -->
+  <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- Main Interactive Script -->
+  <script src="./assets/js/main.js" defer></script>
 </head>
 
 <body>
-    <!-- Layaout Principal -->
-    <div class="layaout">
+  <!-- Header & Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" id="nav-brand" aria-label="Inicio"></a>
 
-        <!-- Barra lateral -->
-        <aside class="layaout__aside">
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal"></nav>
 
-            <section class="aside__user-info">
-
-                <!-- Info general -->
-                <div class="user-info__general">
-
-                    <div class="user-info__container-image">
-                        <img src="/assets/img/jonatan.jpg" class="user-info__image" alt="foto de perfil">
-                    </div>
-                    <!-- Sombra -->
-
-                    <h2 class="user-info__name">Jonatan Alpirez</h2>
-                    <h3 class="user-info__title">Desarrollador Full Stack</h3>
-
-
-                </div>
-
-                <!-- Menú de navegación-->
-                <nav class="layaout__menu">
-                    <ul class="menu__list">
-                        <li class="menu__option">
-                            <a href="index.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-house"></i>
-                                <span class="menu__overlay">Home</span>
-                            </a>
-                        </li>
-                        <li class="menu__option">
-                            <a href="about.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-user"></i>
-                                <span class="menu__overlay">Sobre mi</span>
-                            </a>
-                        </li>
-                        <li class="menu__option">
-                            <a href="academic.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-graduation-cap"></i>
-                                <span class="menu__overlay">Academic</span>
-                            </a>
-                        </li>
-                        <li class="menu__option">
-                            <a href="portafolio.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-briefcase"></i>
-                                <span class="menu__overlay">Portafolio</span>
-                            </a>
-                        </li>
-                        <!-- <li class="menu__option">
-                            <a href="blog.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-book"></i>
-                                <span class="menu__overlay">Blog</span>
-                            </a>
-                        </li> -->
-                        <li class="menu__option">
-                            <a href="contacto.html" class="menu__link">
-                                <i class="menu__icon fa-solid fa-envelope"></i>
-                                <span class="menu__overlay">Contacto</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                </nav>
-
-                <!-- Links de redes -->
-                <div class="user-info__links">
-
-                    <ul class="links_social">
-                        <li class="social__option">
-                            <a href="https://www.linkedin.com/in/jonatan-alpirez/" class="social__link" target="_blank">
-                                <i class="social__icon fa-brands fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li class="social__option">
-                            <a href="https://github.com/JonatanAlpirez" class="social__link" target="_blank">
-                                <i class="social__icon fa-brands fa-github"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Botón -->
-                <div class="user-info__buttons">
-                    <a href="#" class="user-info__btn">
-                        Contacto
-                    </a>
-                </div>
-
-                <!-- Footer -->
-                <footer class="user-info__footer">
-                    &copy; 2024 Jonatan Alpirez
-                </footer>
-
-            </section>
-
-        </aside>
-
-        <!-- Barra responsive -->
-        <div class="layaout__menu-toggle">
-            <i class="menu-toggle__icon fa-solid fa-bars"></i>
-            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
-        </div>
-
-        <!-- Content -->
-        <main class="layaout__content">
-            <section class="content__page">
-
-                <h1 class="page__name">Jonatan Alpirez</h1>
-                <h3 class="page__title">Desarrollador Web</h3>
-
-            </section>
-        </main>
-
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
+  </header>
 
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true"></div>
+
+  <main>
+    <noscript>
+      <div class="container" style="padding-top: 120px;">
+        <div class="about-bio-card">
+          <h1 class="section-title">Jonatan Alpirez</h1>
+          <p class="about-p">Este portafolio requiere JavaScript habilitado para cargar el contenido dinámicamente. Activa JavaScript para ver los datos de contacto o visita <a href="https://github.com/JonatanAlpirez">GitHub</a> y <a href="https://www.linkedin.com/in/jonatan-alpirez/">LinkedIn</a>.</p>
+        </div>
+      </div>
+    </noscript>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container" id="hero-container"></div>
+    </section>
+
+    <!-- SOBRE MÍ SECTION -->
+    <section class="section about-section" id="sobre-mi">
+      <div class="container" id="about-container"></div>
+    </section>
+
+    <!-- HABILIDADES SECTION -->
+    <section class="section skills-section" id="habilidades">
+      <div class="container" id="skills-container"></div>
+    </section>
+
+    <!-- PROYECTOS & PAPERS SECTION -->
+    <section class="section projects-section" id="proyectos">
+      <div class="container" id="projects-container"></div>
+    </section>
+
+    <!-- FORMACIÓN & TRAYECTORIA SECTION -->
+    <section class="section academic-section" id="formacion">
+      <div class="container" id="education-container"></div>
+    </section>
+
+    <!-- CONTACTO SECTION -->
+    <section class="section contact-section" id="contacto">
+      <div class="container" id="contact-container"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" id="footer-container"></div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast-notice" class="toast-notice" role="status" aria-live="polite"></div>
 </body>
-
 </html>
