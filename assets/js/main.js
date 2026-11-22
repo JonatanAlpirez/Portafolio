@@ -19,12 +19,14 @@ function createEl(tag, attrs = {}, children = []) {
       node.textContent = value;
     } else if (key === 'style' && typeof value === 'object') {
       Object.assign(node.style, value);
-    } else if (key.startsWith('data-')) {
-      node.setAttribute(key, value);
     } else {
       node.setAttribute(key, value);
     }
   });
+
+  if (tag === 'i' && !('aria-hidden' in attrs)) {
+    node.setAttribute('aria-hidden', 'true');
+  }
 
   const list = Array.isArray(children) ? children : [children];
   list.forEach((child) => {
@@ -56,6 +58,18 @@ function sanitizeUrl(url) {
     return trimmed;
   }
   return '#';
+}
+
+/**
+ * Reconstruye el correo protegido únicamente en memoria bajo demanda (anti-scraping).
+ */
+function resolveProtectedEmail(profile = {}) {
+  const enc = profile.emailEncoded;
+  if (!enc || typeof enc.k !== 'number' || !Array.isArray(enc.u) || !Array.isArray(enc.d) || !Array.isArray(enc.t)) {
+    return '';
+  }
+  const decode = (codes) => String.fromCharCode(...codes.map((n) => n ^ enc.k));
+  return `${decode(enc.u)}@${decode(enc.d)}.${decode(enc.t)}`;
 }
 
 /**
@@ -129,19 +143,10 @@ function updateMetadata(meta = {}) {
 function renderHeader(data) {
   const brandEl = document.getElementById('nav-brand');
   const navMenuEl = document.getElementById('nav-menu');
-  const navCtaEl = document.getElementById('nav-cta');
   const mobileMenuEl = document.getElementById('mobile-menu');
 
   if (brandEl && data.brand) {
     brandEl.replaceChildren(...createBrandContent(data.brand));
-  }
-
-  if (navCtaEl && data.brand) {
-    navCtaEl.setAttribute('href', sanitizeUrl(data.brand.ctaHref || '#contacto'));
-    navCtaEl.replaceChildren(
-      createEl('i', { className: 'fa-regular fa-paper-plane' }),
-      document.createTextNode(` ${data.brand.ctaLabel || 'Hablemos'}`)
-    );
   }
 
   const navItems = data.navigation || [];
@@ -174,16 +179,21 @@ function renderHero(data) {
   const container = document.getElementById('hero-container');
   if (!container || !data.hero) return;
 
-  const { hero, profile = {} } = data;
-  const email = profile.email || '';
+  const { hero } = data;
+
+  const statusBadge = hero.status
+    ? createEl('div', { className: 'hero-badge-wrap' }, [
+        createEl('span', { className: 'status-badge' }, [
+          hero.statusIcon
+            ? createEl('i', { className: hero.statusIcon })
+            : createEl('span', { className: 'status-pulse' }),
+          document.createTextNode(` ${hero.status}`)
+        ])
+      ])
+    : null;
 
   const infoCol = createEl('div', { className: 'hero-content' }, [
-    createEl('div', { className: 'hero-badge-wrap' }, [
-      createEl('span', { className: 'status-badge' }, [
-        createEl('span', { className: 'status-pulse' }),
-        document.createTextNode(` ${hero.status || ''}`)
-      ])
-    ]),
+    statusBadge,
     createEl('h1', { className: 'hero-title' }, [
       document.createTextNode(`${hero.greeting || ''} `),
       createEl('br'),
@@ -212,7 +222,6 @@ function renderHero(data) {
         {
           type: 'button',
           className: 'btn btn-ghost copy-email-btn',
-          'data-email': email,
           title: 'Copiar correo al portapapeles'
         },
         [
@@ -227,10 +236,12 @@ function renderHero(data) {
         'div',
         { className: 'social-links' },
         (hero.socials || []).map((social) => {
+          const isMailtoAction = social.action === 'mailto';
           const attrs = {
             href: sanitizeUrl(social.href),
-            className: 'social-btn',
-            title: social.title
+            className: isMailtoAction ? 'social-btn email-mailto-trigger' : 'social-btn',
+            title: social.title,
+            'aria-label': social.title
           };
           if (social.external) {
             attrs.target = '_blank';
@@ -266,21 +277,7 @@ function renderHero(data) {
     createEl('div', { className: 'avatar-wrapper' }, avatarChildren)
   ]);
 
-  const statsRibbon = createEl(
-    'div',
-    { className: 'stats-ribbon' },
-    (hero.stats || []).map((stat) =>
-      createEl('div', { className: 'stat-item' }, [
-        createEl('span', { className: 'stat-number', textContent: stat.number }),
-        createEl('span', { className: 'stat-label', textContent: stat.label })
-      ])
-    )
-  );
-
-  container.replaceChildren(
-    createEl('div', { className: 'hero-grid' }, [infoCol, visualCol]),
-    statsRibbon
-  );
+  container.replaceChildren(createEl('div', { className: 'hero-grid' }, [infoCol, visualCol]));
 }
 
 function renderAbout(data) {
@@ -288,6 +285,20 @@ function renderAbout(data) {
   if (!container || !data.about) return;
 
   const { about } = data;
+  const stats = about.stats || data.hero?.stats || [];
+  const statsRibbon =
+    stats.length > 0
+      ? createEl(
+          'div',
+          { className: 'stats-ribbon' },
+          stats.map((stat) =>
+            createEl('div', { className: 'stat-item' }, [
+              createEl('span', { className: 'stat-number', textContent: stat.number }),
+              createEl('span', { className: 'stat-label', textContent: stat.label })
+            ])
+          )
+        )
+      : null;
 
   const paragraphs = (about.paragraphs || []).map((text) => {
     const p = createEl('p', { className: 'about-p' });
@@ -298,17 +309,34 @@ function renderAbout(data) {
   const metaList = createEl(
     'div',
     { className: 'about-meta-list' },
-    (about.metaItems || []).map((item) =>
-      createEl('div', { className: 'about-meta-item' }, [
+    (about.metaItems || []).map((item) => {
+      const valueNode =
+        item.type === 'email'
+          ? createEl(
+              'button',
+              {
+                type: 'button',
+                className: 'meta-value email-reveal-trigger',
+                'data-reveal-class': 'meta-value',
+                'aria-label': 'Revelar correo electrónico'
+              },
+              [
+                createEl('i', { className: 'fa-regular fa-eye' }),
+                document.createTextNode(` ${item.maskedValue || 'Clic para revelar'}`)
+              ]
+            )
+          : createEl('span', { className: 'meta-value', textContent: item.value });
+
+      return createEl('div', { className: 'about-meta-item' }, [
         createEl('div', { className: 'about-meta-icon' }, [
           createEl('i', { className: item.icon })
         ]),
         createEl('div', { className: 'about-meta-content' }, [
           createEl('span', { className: 'meta-title', textContent: item.title }),
-          createEl('span', { className: 'meta-value', textContent: item.value })
+          valueNode
         ])
-      ])
-    )
+      ]);
+    })
   );
 
   const bioCard = createEl('div', { className: 'about-bio-card' }, [...paragraphs, metaList]);
@@ -329,10 +357,11 @@ function renderAbout(data) {
     )
   );
 
-  container.replaceChildren(
-    createSectionHeader(about),
-    createEl('div', { className: 'about-grid' }, [bioCard, valueCards])
-  );
+  const aboutChildren = [createSectionHeader(about)];
+  if (statsRibbon) aboutChildren.push(statsRibbon);
+  aboutChildren.push(createEl('div', { className: 'about-grid' }, [bioCard, valueCards]));
+
+  container.replaceChildren(...aboutChildren);
 }
 
 function renderSkills(data) {
@@ -392,6 +421,7 @@ function renderProjects(data) {
         type: 'button',
         className: idx === 0 ? 'filter-btn active' : 'filter-btn',
         'data-filter': filter.key,
+        'aria-pressed': idx === 0 ? 'true' : 'false',
         textContent: `${filter.label} (${count})`
       });
     })
@@ -490,8 +520,7 @@ function renderContact(data) {
   const container = document.getElementById('contact-container');
   if (!container || !data.contact) return;
 
-  const { contact, profile = {} } = data;
-  const email = profile.email || '';
+  const { contact } = data;
   const formCfg = contact.form || {};
 
   const infoCard = createEl('div', { className: 'contact-info-card' }, [
@@ -502,7 +531,21 @@ function renderContact(data) {
       { className: 'contact-methods' },
       (contact.methods || []).map((method) => {
         let valueNode;
-        if (method.href) {
+        if (method.type === 'email') {
+          valueNode = createEl(
+            'button',
+            {
+              type: 'button',
+              className: 'method-link email-reveal-trigger',
+              'data-reveal-class': 'method-link',
+              'aria-label': 'Revelar correo electrónico'
+            },
+            [
+              createEl('i', { className: 'fa-regular fa-eye' }),
+              document.createTextNode(` ${method.maskedValue || 'Clic para revelar correo'}`)
+            ]
+          );
+        } else if (method.href) {
           const linkAttrs = {
             href: sanitizeUrl(method.href),
             className: 'method-link',
@@ -517,6 +560,19 @@ function renderContact(data) {
           valueNode = createEl('span', { className: 'method-link', textContent: method.value });
         }
 
+        const copyBtn = method.copyable
+          ? createEl(
+              'button',
+              {
+                type: 'button',
+                className: 'method-copy-btn copy-email-btn',
+                title: contact.copyButtonLabel || 'Copiar correo',
+                'aria-label': contact.copyButtonLabel || 'Copiar correo'
+              },
+              [createEl('i', { className: 'fa-regular fa-copy' })]
+            )
+          : null;
+
         return createEl('div', { className: 'contact-method-item' }, [
           createEl('div', { className: 'method-icon' }, [
             createEl('i', { className: method.icon })
@@ -524,24 +580,21 @@ function renderContact(data) {
           createEl('div', { className: 'method-details' }, [
             createEl('span', { className: 'method-label', textContent: method.label }),
             valueNode
-          ])
+          ]),
+          copyBtn
         ]);
       })
-    ),
-    createEl(
-      'button',
-      {
-        type: 'button',
-        className: 'btn btn-outline copy-email-btn',
-        'data-email': email,
-        style: { width: '100%' }
-      },
-      [
-        createEl('i', { className: 'fa-regular fa-copy' }),
-        document.createTextNode(` ${contact.copyButtonLabel || 'Copiar mi correo al portapapeles'}`)
-      ]
     )
   ]);
+
+  const showForm = Boolean(contact.showForm);
+  if (!showForm) {
+    container.replaceChildren(
+      createSectionHeader(contact),
+      createEl('div', { className: 'contact-grid contact-single' }, [infoCard])
+    );
+    return;
+  }
 
   const form = createEl('form', { id: 'contact-form', novalidate: '' }, [
     createEl('div', { className: 'form-group' }, [
@@ -661,11 +714,27 @@ function initInteractions(data) {
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
   const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
+  const emailRevealTriggers = document.querySelectorAll('.email-reveal-trigger');
+  const emailMailtoTriggers = document.querySelectorAll('.email-mailto-trigger');
   const toast = document.getElementById('toast-notice');
 
-  const targetEmail = data.profile?.email || 'jonatan.alpirez@gmail.com';
   const defaultSubject = data.contact?.form?.defaultSubject || 'Contacto desde Portafolio Web';
   let toastTimer = null;
+
+  // Verifica interacción humana real (bloquea clics sintéticos y scrapers sin interacción)
+  let hasHumanInteraction = false;
+  const markHumanInteraction = (event) => {
+    if (event && event.isTrusted) {
+      hasHumanInteraction = true;
+    }
+  };
+  ['pointerdown', 'pointermove', 'keydown', 'touchstart'].forEach((evtName) => {
+    window.addEventListener(evtName, markHumanInteraction, { passive: true, capture: true });
+  });
+
+  function isHumanEvent(event) {
+    return Boolean(event && event.isTrusted && hasHumanInteraction);
+  }
 
   function showToast(message, duration = 3000) {
     if (!toast) return;
@@ -681,6 +750,15 @@ function initInteractions(data) {
   }
 
   // 1. Sticky Navbar & Scroll Spy
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+  function setActiveNav(sectionId) {
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+    });
+  }
+
   function handleScroll() {
     const scrollY = window.scrollY;
     if (navbar) {
@@ -690,16 +768,20 @@ function initInteractions(data) {
       backToTopBtn.classList.toggle('visible', scrollY > 450);
     }
 
-    const sections = document.querySelectorAll('section[id]');
+    const atBottom =
+      window.innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+    if (atBottom && sections.length > 0) {
+      setActiveNav(sections[sections.length - 1].getAttribute('id'));
+      return;
+    }
+
     sections.forEach((section) => {
       const sectionHeight = section.offsetHeight;
       const sectionTop = section.offsetTop - 120;
       const sectionId = section.getAttribute('id');
 
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        document.querySelectorAll('.nav-link').forEach((link) => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
-        });
+        setActiveNav(sectionId);
       }
     });
   }
@@ -711,12 +793,14 @@ function initInteractions(data) {
   if (navToggle && mobileMenu) {
     function closeMobileMenu() {
       mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.replaceChildren(createEl('i', { className: 'fa-solid fa-bars' }));
     }
 
     navToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       navToggle.setAttribute('aria-expanded', String(isOpen));
       navToggle.replaceChildren(
         createEl('i', { className: isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars' })
@@ -737,6 +821,13 @@ function initInteractions(data) {
         closeMobileMenu();
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+        navToggle.focus();
+      }
+    });
   }
 
   // 3. Back to Top Button
@@ -750,8 +841,12 @@ function initInteractions(data) {
   if (filterBtns.length > 0) {
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach((b) => b.classList.remove('active'));
+        filterBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         const filter = btn.getAttribute('data-filter');
 
@@ -776,14 +871,56 @@ function initInteractions(data) {
     });
   }
 
-  // 5. Copy Email to Clipboard
+  // 5. Protected Email Interactions (Reveal, Mailto, Copy)
+  emailRevealTriggers.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!isHumanEvent(e)) return;
+      const email = resolveProtectedEmail(data.profile);
+      if (!email) return;
+      const revealClass = btn.getAttribute('data-reveal-class') || 'method-link';
+      const revealedEl = createEl('span', {
+        className: `${revealClass} email-revealed`,
+        textContent: email
+      });
+      btn.replaceWith(revealedEl);
+    });
+  });
+
+  emailMailtoTriggers.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!isHumanEvent(e)) return;
+      const email = resolveProtectedEmail(data.profile);
+      if (!email) return;
+      window.location.href = `mailto:${email}`;
+    });
+  });
+
   copyEmailBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const email = btn.getAttribute('data-email') || targetEmail;
+      if (!isHumanEvent(e)) return;
+      const email = resolveProtectedEmail(data.profile);
+      if (!email) return;
+      if (!navigator.clipboard) {
+        showToast('Tu navegador no permite copiar automáticamente.');
+        return;
+      }
       navigator.clipboard
         .writeText(email)
-        .then(() => showToast(`Correo copiado: ${email}`))
+        .then(() => {
+          showToast('Correo copiado al portapapeles');
+          if (btn.classList.contains('method-copy-btn')) {
+            btn.classList.add('copied');
+            btn.replaceChildren(createEl('i', { className: 'fa-solid fa-check' }));
+            clearTimeout(btn._copyTimer);
+            btn._copyTimer = setTimeout(() => {
+              btn.classList.remove('copied');
+              btn.replaceChildren(createEl('i', { className: 'fa-regular fa-copy' }));
+            }, 2000);
+          }
+        })
         .catch(() => showToast('Error al copiar correo'));
     });
   });
@@ -794,6 +931,7 @@ function initInteractions(data) {
 
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!isHumanEvent(e)) return;
 
       const name = document.getElementById('name')?.value.trim() || '';
       const email = document.getElementById('email')?.value.trim() || '';
@@ -815,6 +953,9 @@ function initInteractions(data) {
         }
         return;
       }
+
+      const targetEmail = resolveProtectedEmail(data.profile);
+      if (!targetEmail) return;
 
       const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
         `Hola,\n\nMi nombre es ${name} (${email}).\n\nMensaje:\n${message}`
@@ -839,15 +980,20 @@ function initInteractions(data) {
 
 function scrollToInitialHash() {
   if (!window.location.hash) return;
-  const target = document.querySelector(window.location.hash);
-  if (target) {
-    target.scrollIntoView({ behavior: 'auto' });
+  try {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    const target = id ? document.getElementById(id) : null;
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto' });
+    }
+  } catch {
+    // Ignorar hashes malformados
   }
 }
 
 async function initPortfolio() {
   try {
-    const response = await fetch(DATA_URL, { cache: 'no-store' });
+    const response = await fetch(DATA_URL);
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }

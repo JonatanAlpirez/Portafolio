@@ -1,6 +1,6 @@
 # Portafolio Profesional
  
-Sitio web personal y profesional de **Jonatan Alpirez** — Desarrollador Full Stack & Investigador en Ciencias Biomédicas (PhD).
+Sitio web personal y profesional de **Jonatan Alpirez** — Ingeniero de Software.
 
 - **Producción:** https://jonatan.netlify.app/
 - **Repositorio:** https://github.com/JonatanAlpirez/Portafolio

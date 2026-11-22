@@ -1,15 +1,13 @@
 {
   "meta": {
-    "title": "Jonatan Alpirez | Desarrollador Full Stack & Investigador (PhD)",
+    "title": "Jonatan Alpirez | Ingeniero de Software",
     "description": "Portafolio profesional de Jonatan Alpirez. Desarrollador Web Full Stack (Java, Spring Boot, React, Next.js, Python) y Doctor en Ciencias Biomédicas.",
     "keywords": "Jonatan Alpirez, Desarrollador Full Stack, Java, Spring Boot, React, Next.js, Python, Data Science, Neurociencias, Portafolio",
     "author": "Jonatan Alpirez"
   },
   "brand": {
     "firstName": "Jonatan",
-    "lastName": "Alpirez",
-    "ctaLabel": "Hablemos",
-    "ctaHref": "#contacto"
+    "lastName": "Alpirez"
   },
   "navigation": [
     {
@@ -39,30 +37,33 @@
     }
   ],
   "profile": {
-    "email": "jonatan.alpirez@gmail.com",
-    "whatsappUrl": "https://wa.me/523317034178",
-    "githubUrl": "https://github.com/JonatanAlpirez",
-    "linkedinUrl": "https://www.linkedin.com/in/jonatan-alpirez/"
+    "emailEncoded": {
+      "k": 42,
+      "u": [64, 69, 68, 75, 94, 75, 68, 4, 75, 70, 90, 67, 88, 79, 80],
+      "d": [77, 71, 75, 67, 70],
+      "t": [73, 69, 71]
+    }
   },
   "hero": {
-    "status": "Disponible para nuevos proyectos & retos",
+    "status": "Guadalajara, México • Ingeniería & Ciencia",
+    "statusIcon": "fa-solid fa-location-dot",
     "greeting": "Hola, soy",
     "name": "Jonatan Alpirez",
-    "subtitle": "Desarrollador Full Stack & Investigador (PhD)",
+    "subtitle": "Ingeniero de Software",
     "subtitleIcon": "fa-solid fa-code",
-    "description": "Combino el desarrollo de software web moderno con el rigor metodológico de la ciencia de datos y la investigación. Construyo aplicaciones web interactivas, arquitecturas robustas en Java Spring Boot y React, y análisis cuantitativo de alto nivel.",
+    "description": "Desarrollo aplicaciones web con Java, Spring Boot y React, y aplico análisis cuantitativo de datos en investigación biomédica. Un punto de encuentro entre la ingeniería de software y el método científico.",
     "primaryButton": {
       "label": "Ver Proyectos",
       "href": "#proyectos",
       "icon": "fa-solid fa-rocket"
     },
     "secondaryButton": {
-      "label": "Contáctame",
+      "label": "Contacto",
       "href": "#contacto",
       "icon": "fa-regular fa-envelope"
     },
     "copyEmailLabel": "Copiar Correo",
-    "socialsLabel": "Conéctate:",
+    "socialsLabel": "Perfiles:",
     "socials": [
       {
         "title": "GitHub",
@@ -78,15 +79,10 @@
       },
       {
         "title": "Correo",
-        "href": "mailto:jonatan.alpirez@gmail.com",
+        "action": "mailto",
+        "href": "#contacto",
         "icon": "fa-regular fa-envelope",
         "external": false
-      },
-      {
-        "title": "WhatsApp",
-        "href": "https://wa.me/523317034178",
-        "icon": "fa-brands fa-whatsapp",
-        "external": true
       }
     ],
     "avatar": {
@@ -109,7 +105,13 @@
         "icon": "devicon-python-plain",
         "color": "#FFD43B"
       }
-    ],
+    ]
+  },
+  "about": {
+    "tag": "// 01. PERFIL",
+    "titlePrefix": "Sobre",
+    "titleHighlight": "Mí",
+    "subtitle": "Una trayectoria donde convergen la ingeniería de software, el análisis cuantitativo de datos y el método científico.",
     "stats": [
       {
         "number": "+5",
@@ -127,17 +129,11 @@
         "number": "2 Papers",
         "label": "Publicaciones científicas indexadas"
       }
-    ]
-  },
-  "about": {
-    "tag": "// 01. INTRODUCCIÓN",
-    "titlePrefix": "Sobre",
-    "titleHighlight": "Mí",
-    "subtitle": "Una trayectoria singular donde convergen la ingeniería de software, el análisis cuantitativo de datos y el método científico.",
+    ],
     "paragraphs": [
-      "¡Hola! Soy **Jonatan Alpirez**, desarrollador de software Full Stack y Doctor en Ciencias Biomédicas (Neurociencias) radicado en Guadalajara, México.",
-      "A lo largo de mi carrera he integrado dos mundos complementarios: la agilidad y creatividad del **desarrollo web contemporáneo** con la disciplina, precisión y pensamiento crítico forjados en la **investigación científica**.",
-      "He diseñado y construido plataformas web completas (e-commerce y aplicaciones basadas en APIs REST) con arquitecturas modulares, autenticación y bases de datos relacionales. Al mismo tiempo, he liderado análisis cinemáticos y estadísticos de conjuntos de datos complejos que derivaron en dos artículos científicos publicados en prestigiosas revistas internacionales."
+      "Soy **Jonatan Alpirez**, desarrollador de software Full Stack y Doctor en Ciencias Biomédicas (Neurociencias) radicado en Guadalajara, México.",
+      "Mi trabajo integra dos áreas complementarias: el **desarrollo de aplicaciones web** y el análisis cuantitativo proveniente de la **investigación científica**.",
+      "He diseñado y construido plataformas web completas —desde e-commerce hasta aplicaciones basadas en APIs REST— con autenticación y bases de datos relacionales. En paralelo, desarrollé análisis cinemáticos y estadísticos que derivaron en dos artículos científicos publicados en revistas internacionales indexadas."
     ],
     "metaItems": [
       {
@@ -153,12 +149,13 @@
       {
         "icon": "fa-solid fa-envelope",
         "title": "Correo",
-        "value": "jonatan.alpirez@gmail.com"
+        "type": "email",
+        "maskedValue": "Clic para revelar"
       },
       {
-        "icon": "fa-solid fa-phone",
-        "title": "Teléfono / WhatsApp",
-        "value": "+52 33 1703 4178"
+        "icon": "fa-solid fa-code",
+        "title": "Enfoque",
+        "value": "Ingeniería de Software"
       }
     ],
     "pillars": [
@@ -183,7 +180,7 @@
     "tag": "// 02. COMPETENCIAS",
     "titlePrefix": "Stack &",
     "titleHighlight": "Habilidades",
-    "subtitle": "Tecnologías y herramientas que domino para resolver problemas y llevar proyectos a producción.",
+    "subtitle": "Tecnologías y herramientas con las que trabajo en desarrollo web, análisis de datos e investigación.",
     "categories": [
       {
         "title": "Frontend",
@@ -464,26 +461,22 @@
     ]
   },
   "contact": {
-    "tag": "// 05. COMUNICACIÓN",
-    "titlePrefix": "Iniciemos una",
-    "titleHighlight": "Conversación",
-    "subtitle": "¿Tienes un proyecto en mente, una vacante laboral o te interesa colaborar en una propuesta técnica?",
-    "cardTitle": "Canales de contacto directo",
-    "cardDescription": "Estoy siempre disponible para discutir oportunidades como desarrollador web, análisis de datos o proyectos de innovación tecnológica. Escríbeme y te responderé a la brevedad.",
+    "tag": "// 05. CONTACTO",
+    "titlePrefix": "Canales de",
+    "titleHighlight": "Contacto",
+    "subtitle": "Si quieres intercambiar ideas sobre tecnología, investigación o algún proyecto, puedes escribirme por cualquiera de estos medios.",
+    "cardTitle": "Información de contacto",
+    "cardDescription": "Abierto a conversar sobre desarrollo de software, análisis de datos, investigación o colaboraciones técnicas.",
+    "showForm": false,
     "methods": [
       {
         "icon": "fa-regular fa-envelope",
         "label": "Correo Electrónico",
-        "value": "jonatan.alpirez@gmail.com",
-        "href": "mailto:jonatan.alpirez@gmail.com",
-        "external": false
-      },
-      {
-        "icon": "fa-brands fa-whatsapp",
-        "label": "Teléfono / WhatsApp",
-        "value": "+52 33 1703 4178",
-        "href": "https://wa.me/523317034178",
-        "external": true
+        "type": "email",
+        "maskedValue": "Clic para revelar correo",
+        "href": null,
+        "external": false,
+        "copyable": true
       },
       {
         "icon": "fa-solid fa-location-dot",
@@ -507,22 +500,22 @@
         "external": true
       }
     ],
-    "copyButtonLabel": "Copiar mi correo al portapapeles",
+    "copyButtonLabel": "Copiar correo",
     "form": {
       "nameLabel": "Nombre completo *",
       "namePlaceholder": "Ej. Ana García",
       "emailLabel": "Correo electrónico *",
       "emailPlaceholder": "nombre@correo.com",
       "subjectLabel": "Asunto",
-      "subjectPlaceholder": "Ej. Propuesta de proyecto / Oportunidad laboral",
+      "subjectPlaceholder": "Ej. Consulta técnica / Colaboración",
       "defaultSubject": "Contacto desde Portafolio Web",
       "messageLabel": "Mensaje *",
-      "messagePlaceholder": "Cuéntame sobre tu proyecto o consulta...",
+      "messagePlaceholder": "Escribe tu mensaje...",
       "submitLabel": "Enviar Mensaje"
     }
   },
   "footer": {
-    "description": "Desarrollador Web Full Stack & Doctor en Ciencias Biomédicas. Creando soluciones digitales con arquitectura limpia, rigor analítico y tecnología moderna.",
+    "description": "Desarrollador Web Full Stack & Doctor en Ciencias Biomédicas. Proyectos de software, análisis de datos e investigación.",
     "copyright": "© 2026 Jonatan Alpirez. Todos los derechos reservados.",
     "note": "Diseñado con código limpio, semántico y responsive."
   }
